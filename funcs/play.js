@@ -8,7 +8,7 @@ module.exports = async function (guild, song, client, message, seek) {
         return;
     }
     const dispatcher = serverQueue.connection
-        .playStream(ytdl(song.url, { filter: "audio", highWaterMark: 1 << 25 }), { seek: seek, bitrate: 512, passes: 10, volume: 1 })
+        .playStream(ytdl(song.url, { filter: "audio", highWaterMark: 1 << 25 }), { seek: seek, bitrate: 1024, passes: 10, volume: 1 })
         .on("end", reason => {
             if (reason === "Stream is not generating quickly enough.") {
                 console.log("Song ended");

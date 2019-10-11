@@ -6,7 +6,7 @@ module.exports = async function (video, message, voiceChannel, client, playlist 
         url: `https://www.youtube.com/watch?v=${video.id}`
     }
     const serverQueue = client.queue.get(message.guild.id);
-    if (client.global.db._guilds[message.guild.id].defaultVolume === undefined) {
+    if (client.global.db.guilds[message.guild.id].defaultVolume === undefined) {
         client.global.db.guilds[message.guild.id] = {
             prefix: client.global.db.guilds[message.guild.id].prefix,
             defaultVolume: 5,
