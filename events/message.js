@@ -2,7 +2,7 @@ module.exports = {
     name: 'message',
     async execute(client, message, Discord) {
         if (message.author.bot || !message.guild) return;
-        if (message.content.content === '->reset' && message.author.id === '360363051792203779') {
+        if (message.content === '->reset' && message.author.id === '360363051792203779') {
             client.guilds.forEach(guild => {
                 client.global.db.guilds[guild.id] = {
                     prefix: ">",
@@ -11,7 +11,7 @@ module.exports = {
                 };
             });
             return message.channel.send(':white_check_mark: Reset all guild settings!')
-        } else if (message.content.conte === '->resetguildsettings' && message.author.id === '360363051792203779') {
+        } else if (message.content === '->resetguildsettings' && message.author.id === '360363051792203779') {
             client.global.db.guilds[message.guild.id] = {
                 prefix: ">",
                 defaultVolume: 5,
