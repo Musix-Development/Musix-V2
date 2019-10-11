@@ -68,7 +68,7 @@ client.on('guildCreate', async (guild) => {
   event.execute(client, guild);
 });
 dbl.on('posted', () => {
-  console.log('erver count posted!');
+  console.log('Server count posted!');
 })
 
 dbl.on('error', error => {
